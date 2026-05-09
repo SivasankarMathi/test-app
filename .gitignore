@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# production/build output
+dist/
+
+# misc
+.DS_Store
+.env
+.env.*
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE/editor
+.vscode/
+.idea/
+
+# Vite cache
+.vite/
+
+# TypeScript cache (if present)
+*.tsbuildinfo
