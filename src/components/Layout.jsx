@@ -1,12 +1,14 @@
-import { ShoppingCart, Search, User, Package, Heart, LogOut } from 'lucide-react'
+import { ShoppingCart, Search, User, Package, Heart, LogOut, Sun, Moon } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { useTheme } from '../context/ThemeContext'
 
 export function Layout({ children }) {
   const [isProfileOpen, setIsProfileOpen] = useState(false)
+  const { theme, setTheme } = useTheme()
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col transition-colors duration-300">
       {/* Header */}
       <header className="bg-primary/95 backdrop-blur sticky top-0 z-50 shadow-md border-b border-primary/20">
         <div className="container mx-auto px-4 h-16 flex items-center gap-6">
@@ -44,19 +46,19 @@ export function Layout({ children }) {
               {/* Dropdown */}
               {isProfileOpen && (
                 <div className="absolute top-full right-0 w-64 pt-2">
-                  <div className="bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden mt-1 animate-in fade-in slide-in-from-top-2 duration-200">
-                    <div className="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50">
-                      <span className="text-sm font-semibold text-slate-800">New customer?</span>
+                  <div className="bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 overflow-hidden mt-1 animate-in fade-in slide-in-from-top-2 duration-200">
+                    <div className="p-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-800/50">
+                      <span className="text-sm font-semibold text-slate-800 dark:text-slate-200">New customer?</span>
                       <Link to="/" className="text-xs font-bold text-primary hover:underline">Sign Up</Link>
                     </div>
                     <div className="p-2 space-y-1">
-                      <Link to="/" className="flex items-center gap-3 px-3 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">
+                      <Link to="/" className="flex items-center gap-3 px-3 py-2.5 text-sm text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-colors">
                         <User className="w-4 h-4" /> My Profile
                       </Link>
-                      <Link to="/" className="flex items-center gap-3 px-3 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">
+                      <Link to="/" className="flex items-center gap-3 px-3 py-2.5 text-sm text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-colors">
                         <Package className="w-4 h-4" /> Orders
                       </Link>
-                      <Link to="/" className="flex items-center gap-3 px-3 py-2.5 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors">
+                      <Link to="/" className="flex items-center gap-3 px-3 py-2.5 text-sm text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-colors">
                         <Heart className="w-4 h-4" /> Wishlist
                       </Link>
                     </div>
@@ -72,6 +74,15 @@ export function Layout({ children }) {
                 2
               </span>
             </Link>
+
+            {/* Theme Toggle */}
+            <button 
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="p-2 ml-1 text-white/90 hover:text-white hover:bg-white/10 rounded-full transition-colors flex items-center justify-center"
+              aria-label="Toggle Dark Mode"
+            >
+              {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
           </div>
         </div>
       </header>
