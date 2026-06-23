@@ -8,7 +8,6 @@ const categories = [
   { name: 'Electronics', icon: '💻' },
   { name: 'Home', icon: '🏠' },
   { name: 'Appliances', icon: '📺' },
-  { name: 'Toys', icon: '🧸' },
 ]
 
 export function HomePage() {
