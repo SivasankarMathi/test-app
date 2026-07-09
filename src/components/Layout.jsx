@@ -1,4 +1,4 @@
-import { ShoppingCart, Search, User, Package, Heart, LogOut, Sun, Moon } from 'lucide-react'
+import { Search, User, Package, Heart, LogOut, Sun, Moon } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useTheme } from '../context/ThemeContext'
@@ -66,14 +66,6 @@ export function Layout({ children }) {
                 </div>
               )}
             </div>
-
-            <Link to="/cart" className="flex items-center gap-2 hover:bg-white/10 px-3 py-2 rounded-lg text-white font-medium text-sm transition-colors relative">
-              <ShoppingCart className="w-5 h-5" />
-              <span className="hidden lg:block">Cart</span>
-              <span className="absolute top-1 right-2 lg:right-auto lg:left-7 bg-orange-500 text-white text-[10px] font-bold min-w-[16px] h-4 rounded-full flex items-center justify-center px-1 shadow-sm border border-primary/20">
-                2
-              </span>
-            </Link>
 
             {/* Theme Toggle */}
             <button 
