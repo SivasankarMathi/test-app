@@ -14,20 +14,6 @@ const categories = [
 export function HomePage() {
   return (
     <div className="flex flex-col gap-6 py-4">
-      {/* Categories Bar */}
-      <section className="bg-white dark:bg-slate-900 mx-4 rounded-md shadow-sm border border-slate-100 dark:border-slate-800 p-4">
-        <div className="container mx-auto flex items-center justify-between overflow-x-auto gap-6 hide-scrollbar">
-          {categories.map((category) => (
-            <Link key={category.name} to={`/products?category=${category.name}`} className="flex flex-col items-center gap-2 group min-w-[64px]">
-              <div className="bg-slate-50 dark:bg-slate-800 w-16 h-16 rounded-full flex items-center justify-center text-2xl group-hover:bg-primary/5 dark:group-hover:bg-primary/20 transition-colors">
-                {category.icon}
-              </div>
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover:text-primary dark:group-hover:text-primary-foreground transition-colors">{category.name}</span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
       {/* Hero Banner */}
       <section className="container mx-auto px-4">
         <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-xl md:rounded-2xl h-[200px] md:h-[320px] flex items-center px-8 md:px-16 text-white relative overflow-hidden shadow-lg shadow-blue-900/10">
@@ -40,6 +26,20 @@ export function HomePage() {
           </div>
           {/* Decorative elements */}
           <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-white/10 skew-x-12 translate-x-16 rounded-3xl" />
+        </div>
+      </section>
+
+      {/* Categories Bar */}
+      <section className="bg-white dark:bg-slate-900 mx-4 rounded-md shadow-sm border border-slate-100 dark:border-slate-800 p-4">
+        <div className="container mx-auto flex items-center justify-between overflow-x-auto gap-6 hide-scrollbar">
+          {categories.map((category) => (
+            <Link key={category.name} to={`/products?category=${category.name}`} className="flex flex-col items-center gap-2 group min-w-[64px]">
+              <div className="bg-slate-50 dark:bg-slate-800 w-16 h-16 rounded-full flex items-center justify-center text-2xl group-hover:bg-primary/5 dark:group-hover:bg-primary/20 transition-colors">
+                {category.icon}
+              </div>
+              <span className="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover:text-primary dark:group-hover:text-primary-foreground transition-colors">{category.name}</span>
+            </Link>
+          ))}
         </div>
       </section>
 
