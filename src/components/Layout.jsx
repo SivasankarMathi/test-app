@@ -38,10 +38,10 @@ export function Layout({ children }) {
                  onMouseEnter={() => setIsProfileOpen(true)}
                  onMouseLeave={() => setIsProfileOpen(false)}>
               
-              <button className="flex items-center gap-2 hover:bg-white/10 px-3 py-2 rounded-lg text-white font-medium text-sm transition-colors">
-                <User className="w-5 h-5" /> 
+              <Link to="/login" className="flex items-center gap-2 hover:bg-white/10 px-3 py-2 rounded-lg text-white font-medium text-sm transition-colors">
+                <User className="w-5 h-5" />
                 <span className="hidden lg:block">Login</span>
-              </button>
+              </Link>
 
               {/* Dropdown */}
               {isProfileOpen && (
