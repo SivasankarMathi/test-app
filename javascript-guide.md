@@ -1,6 +1,7 @@
 # JavaScript Guide
 
 ## What is JavaScript?
+Siva
 
 JavaScript is a high-level, interpreted programming language that enables interactive web pages. It's one of the core technologies of the web, alongside HTML and CSS.
 
